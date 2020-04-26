@@ -13,9 +13,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.zxing.integration.android.IntentIntegrator;
@@ -37,6 +40,7 @@ import javax.net.ssl.HttpsURLConnection;
 
 public class MainActivitysc extends AppCompatActivity {
     String scannedData;
+    private DatabaseReference firebaseDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +57,7 @@ public class MainActivitysc extends AppCompatActivity {
 
             }
         });
+        firebaseDatabase = FirebaseDatabase.getInstance().getReference("Attendence");
 
 
     }
@@ -65,9 +70,23 @@ public class MainActivitysc extends AppCompatActivity {
             scannedData = result.getContents();
             if (scannedData != null) {
                 // Here we need to handle scanned data...
-                new SendRequest().execute();
+//                new SendRequest().execute();
+                //save data in firebase
+                firebaseDatabase.child("attendence_child").setValue(scannedData)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(MainActivitysc.this,"Attendence Accepted",Toast.LENGTH_SHORT).show();
+
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(MainActivitysc.this,"Invalid",Toast.LENGTH_SHORT).show();
 
 
+                    }
+                });
 
 
             } else {

@@ -81,20 +81,20 @@ public class TakeAttendence extends AppCompatActivity {
         });
 
         // databaseReference = FirebaseDatabase.getInstance().getReference("Attendence");
-// FROM LOACATION BUT REMBER TO GIVE IT INSIDE LOOOP ELSE WILL COME BACK
+        // FROM LOACATION BUT REMBER TO GIVE IT INSIDE LOOOP ELSE WILL COME BACK
         final DatabaseReference ref = FirebaseDatabase.getInstance().getReference("students");
 
         // final     DatabaseReference fromPath = FirebaseDatabase.getInstance().getReference("students");
 
         ref.child(btnvaluedatabase.getText().toString()).orderByChild("mcneeseId").equalTo(takeAttendence.getText().toString());
-//....................... TO LOCATION
+        //....................... TO LOCATION
         final   DatabaseReference toPath = FirebaseDatabase.getInstance()
                 .getReference("Attendence")
                 .child(btnvaluedatabase.getText().toString())  // NEED TO GET DATE INPUT
                 .child("Date = "+date)
-                .child(takeAttendence.getText().toString())
-                .child(take.getText().toString());
-// CHECKING IF THE GIVEN INPUT FROM USER IS IN DATABASE AND THEN IF IT IS COPY THAT CHILD AND PASTE THAT CHILD TO ATTENDENCE
+                .child(takeAttendence.getText().toString());
+        //                .child(take.getText().toString());
+        // CHECKING IF THE GIVEN INPUT FROM USER IS IN DATABASE AND THEN IF IT IS COPY THAT CHILD AND PASTE THAT CHILD TO ATTENDENCE
         attendenceBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
