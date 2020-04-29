@@ -8,13 +8,7 @@
     tools:context=".Main2Activity"
     android:background="#ffffff">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
+
 
     <ImageView
         android:layout_width="243dp"

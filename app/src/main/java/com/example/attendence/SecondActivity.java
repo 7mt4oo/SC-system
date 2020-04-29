@@ -1,4 +1,4 @@
-package com.example.attendence;
+ package com.example.attendence;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -47,7 +47,18 @@ public class SecondActivity extends AppCompatActivity {
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                validate(Email.getText().toString(), Password.getText().toString());
+//                if (Email.getText().toString().equals("admin@admin.com") && Password.getText().toString().equals("admin")){
+//                Toast.makeText(SecondActivity.this,"LOGIN SUCCESSFUL", Toast.LENGTH_SHORT).show();
+//                    Intent intent = new Intent(getApplicationContext(), AddStudent.class);
+//                    startActivity(intent);
+//
+//                } else {
+////                    Toast.makeText(SecondActivity.this,"LOGIN FAILED", Toast.LENGTH_SHORT).show();
+//
+//
+//                }
+                    validate(Email.getText().toString(), Password.getText().toString());
+
             }
         });
 
@@ -66,12 +77,14 @@ public class SecondActivity extends AppCompatActivity {
         firebaseAuth.signInWithEmailAndPassword(userEmail,userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
+
                 if(task.isSuccessful()){
+
                     processDialog.dismiss();
-                    Toast.makeText(SecondActivity.this,"LOGIN SUCCESSFUL", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SecondActivity.this,"Login Successful", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(SecondActivity.this,ThirdActivity.class));
                 }else {
-                    Toast.makeText(SecondActivity.this,"LOGIN FAILED", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SecondActivity.this,"Login Failed", Toast.LENGTH_SHORT).show();
                     processDialog.dismiss();
 
                 }

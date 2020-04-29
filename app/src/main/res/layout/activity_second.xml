@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,101 +7,73 @@
     tools:context=".MainActivity"
     android:background="@drawable/backgroundgradient">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/backgroundgradient"
-        tools:context=".MainActivity">
+    <Button
+        android:id="@+id/loginmainbutton"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_alignLeft="@+id/editpassword"
+        android:layout_alignEnd="@+id/editpassword"
+        android:layout_alignBottom="@+id/editpassword"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="108dp"
+        android:layout_marginBottom="217dp"
+        android:background="@drawable/submit"
+        android:onClick="login"
+        android:padding="20dp"
+        android:text="Login"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editpassword" />
 
-        <EditText
-            android:id="@+id/editpassword"
-            android:layout_width="250dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="375dp"
-            android:layout_marginRight="20dp"
-            android:autoSizeMaxTextSize="2dp"
-            android:autoSizeTextType="uniform"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/coursename"
-            android:drawableLeft="@drawable/ic_lock_blue_24dp"
-            android:ems="10"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:padding="20dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:password="true"
-            android:textAllCaps="true"
-            android:textColorHint="#2327E7" />
+    <EditText
+        android:id="@+id/editemail"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginTop="269dp"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/coursename"
+        android:drawableLeft="@drawable/ic_email_blue_24dp"
+        android:hint=" Email "
+        android:inputType="textEmailAddress"
+        android:padding="20dp"
 
-        <!--<TextView-->
-        <!--android:id="@+id/viewclassname"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignTop="@+id/password"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:layout_marginLeft="61dp"-->
-        <!--android:layout_marginTop="-83dp"-->
-        <!--android:layout_marginBottom="-96dp"-->
-        <!--android:fontFamily="serif"-->
-        <!--android:text="wwww"-->
-        <!--android:textAllCaps="true"-->
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColorHint="#2327E7"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/editpassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <!--android:textFontWeight="15dp"-->
-        <!--android:textSize="35dp"-->
-        <!--android:textStyle="bold" />-->
-        <EditText
-            android:id="@+id/editemail"
-            android:layout_width="250dp"
-            android:layout_height="60dp"
-            android:layout_alignBottom="@+id/imageView2"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="-78dp"
-            android:background="@drawable/coursename"
-            android:drawableLeft="@drawable/ic_email_blue_24dp"
-            android:hint=" Email "
-            android:padding="20dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:textColorHint="#2327E7"
-            android:textSize="15dp"
+    <EditText
+        android:id="@+id/editpassword"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:autoSizeMaxTextSize="2dp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/coursename"
+        android:drawableLeft="@drawable/ic_lock_blue_24dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="20dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textAllCaps="true"
+        android:textColorHint="#2327E7"
+        app:layout_constraintBottom_toTopOf="@+id/loginmainbutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editemail" />
 
-            android:textStyle="bold"
-            />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="161dp"
-            android:layout_height="120dp"
-
-            android:layout_marginLeft="130dp"
-            android:layout_marginTop="50dp"
-            app:srcCompat="@drawable/logo" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:layout_alignEnd="@+id/imageView"
-            android:layout_alignBottom="@+id/imageView"
-            android:layout_marginTop="100dp"
-            android:layout_marginEnd="-76dp"
-            android:layout_marginBottom="-106dp"
-            app:srcCompat="@drawable/mcneesename" />
-
-        <Button
-            android:id="@+id/loginmainbutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/editpassword"
-            android:layout_alignBottom="@+id/editpassword"
-            android:layout_marginLeft="83dp"
-            android:layout_marginBottom="-98dp"
-            android:background="@drawable/submit"
-            android:onClick="login"
-            android:padding="20dp"
-            android:text="Login" />
-
-    </RelativeLayout>
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

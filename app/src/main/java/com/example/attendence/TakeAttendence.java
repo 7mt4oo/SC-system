@@ -3,6 +3,7 @@ package com.example.attendence;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -30,7 +31,7 @@ public class TakeAttendence extends AppCompatActivity {
     private TextView btnvaluedatabase;
     private FirebaseAuth firebaseAuth;
     //..........Date
-    private   TextView tvCounter;
+    private TextView tvCounter;
 
     private TextView mDisplayDate;
     Button button;
@@ -69,7 +70,7 @@ public class TakeAttendence extends AppCompatActivity {
         btnvaluedatabase.setText(classnamepassed);
         tvCounter = findViewById(R.id.tvcounter);
         takeAttendence = findViewById(R.id.takeattendence);
-        take = findViewById(R.id.takeattendenenceschool);
+//        take = findViewById(R.id.takeattendenenceschool);
         attendenceBtn = findViewById(R.id.attendencebtn);
         button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
@@ -89,7 +90,7 @@ public class TakeAttendence extends AppCompatActivity {
         ref.child(btnvaluedatabase.getText().toString()).orderByChild("mcneeseId").equalTo(takeAttendence.getText().toString());
         //....................... TO LOCATION
         final   DatabaseReference toPath = FirebaseDatabase.getInstance()
-                .getReference("Attendence")
+                .getReference("Attendance")
                 .child(btnvaluedatabase.getText().toString())  // NEED TO GET DATE INPUT
                 .child("Date = "+date)
                 .child(takeAttendence.getText().toString());
@@ -130,7 +131,7 @@ public class TakeAttendence extends AppCompatActivity {
                             //..................................................................
                             counter = counter + 1;
                             tvCounter.setText(String.valueOf(counter));
-                            Toast.makeText(TakeAttendence.this,"Attendence Accepted",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(TakeAttendence.this,"Attendance Accepted",Toast.LENGTH_SHORT).show();
                         }else
                         {
                             Toast.makeText(TakeAttendence.this,"Invalid",Toast.LENGTH_SHORT).show();
@@ -153,34 +154,42 @@ public class TakeAttendence extends AppCompatActivity {
     // attendence counter
 
 
-
     // logout below
     private void Logout()
     {
         firebaseAuth.signOut();
         finish();
         startActivity(new Intent(TakeAttendence.this,SecondActivity.class));
-        Toast.makeText(TakeAttendence.this,"LOGOUT SUCCESSFUL", Toast.LENGTH_SHORT).show();
+        Toast.makeText(TakeAttendence.this,"Logout Successful", Toast.LENGTH_SHORT).show();
 
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu,menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.example_menu, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-            case  R.id.logoutMenu:{
-                Logout();
-            }
-        }
-        return super.onOptionsItemSelected(item);
-    }
+        switch (item.getItemId()) {
 
+            case R.id.logout:
+                firebaseAuth.signOut();
+                finish();
+                startActivity(new Intent(TakeAttendence.this,SecondActivity.class));
+                Toast.makeText(TakeAttendence.this,"Logout Successful", Toast.LENGTH_SHORT).show();
+                return true;
+//            case R.id.item3:
+//                Toast.makeText(this, "Item 3 selected", Toast.LENGTH_SHORT).show();
+//                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
 
 }

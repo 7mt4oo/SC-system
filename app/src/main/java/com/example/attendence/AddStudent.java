@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -23,8 +24,9 @@ public class AddStudent extends AppCompatActivity {
     private Button delete;
     private FirebaseAuth firebaseAuth;
 
-    private  TextView btnvaluedatabase;
+    private TextView btnvaluedatabase;
     DatabaseReference databaseReference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,8 +40,8 @@ public class AddStudent extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference("students");
 
 
-        studentName = (EditText)findViewById(R.id.studentNamedatabase);
-        mcneeseId = (EditText)findViewById(R.id.mcneeseiddatabase);
+        studentName = (EditText) findViewById(R.id.studentNamedatabase);
+        mcneeseId = (EditText) findViewById(R.id.mcneeseiddatabase);
         add = (Button) findViewById(R.id.addStudentdatabase);
         delete = (Button) findViewById(R.id.deleteStudentdatabase);
 
@@ -60,77 +62,78 @@ public class AddStudent extends AppCompatActivity {
     }
 
 
-    public void addStudent(){
+    public void addStudent() {
         String studentNameValue = studentName.getText().toString();
         String mcneeseIdValue = mcneeseId.getText().toString();
-        if(!TextUtils.isEmpty(studentNameValue)&&!TextUtils.isEmpty(mcneeseIdValue)){
+        if (!TextUtils.isEmpty(studentNameValue) && !TextUtils.isEmpty(mcneeseIdValue)) {
             String id = databaseReference.push().getKey();
-            Students students = new Students(id,studentNameValue,mcneeseIdValue);
+            Students students = new Students(id, studentNameValue, mcneeseIdValue);
             // databaseReference.child(bttnName.getText().toString()).push().setValue(students);
             databaseReference.child(btnvaluedatabase.getText().toString()).child(mcneeseId.getText().toString()).setValue(students);
             studentName.setText("");
             mcneeseId.setText("");
-            Toast.makeText(AddStudent.this,"Student Details Added",Toast.LENGTH_SHORT).show();
-        }
-        else{
-            Toast.makeText(AddStudent.this,"Please Fill Fields",Toast.LENGTH_SHORT).show();
+            Toast.makeText(AddStudent.this, "Student Details Added", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(AddStudent.this, "Please Fill Fields", Toast.LENGTH_SHORT).show();
         }
     }
 
-    public  void  deleteStudent(){
+    public void deleteStudent() {
         String studentNameValue = studentName.getText().toString();
         String mcneeseIdValue = mcneeseId.getText().toString();
 
-        if(!TextUtils.isEmpty(studentNameValue)&&!TextUtils.isEmpty(mcneeseIdValue)){
+        if (!TextUtils.isEmpty(studentNameValue) && !TextUtils.isEmpty(mcneeseIdValue)) {
             String id = databaseReference.push().getKey();
-            Students students = new Students(id,studentNameValue,mcneeseIdValue);
+            Students students = new Students(id, studentNameValue, mcneeseIdValue);
             // databaseReference.child(bttnName.getText().toString()).push().setValue(students);
             databaseReference.child(btnvaluedatabase.getText().toString()).child(mcneeseId.getText().toString()).removeValue();
 
             studentName.setText("");
             mcneeseId.setText("");
-            Toast.makeText(AddStudent.this,"Student Deleted",Toast.LENGTH_SHORT).show();
-        }
-        else{
-            Toast.makeText(AddStudent.this,"Please Fill Fields",Toast.LENGTH_SHORT).show();
+            Toast.makeText(AddStudent.this, "Student Deleted", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(AddStudent.this, "Please Fill Fields", Toast.LENGTH_SHORT).show();
         }
     }
-
-
-
-
-
-
-
 
 
     //logout
 
     // logout below
-    private void Logout()
-    {
+    private void Logout() {
         firebaseAuth.signOut();
         finish();
-        startActivity(new Intent(AddStudent.this,SecondActivity.class));
-        Toast.makeText(AddStudent.this,"LOGOUT SUCCESSFUL", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(AddStudent.this, SecondActivity.class));
+        Toast.makeText(AddStudent.this, "LOGOUT SUCCESSFUL", Toast.LENGTH_SHORT).show();
 
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu,menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.example_menu, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-            case  R.id.logoutMenu:{
-                Logout();
-            }
+        switch (item.getItemId()) {
+
+            case R.id.logout:
+                firebaseAuth.signOut();
+                finish();
+                startActivity(new Intent(AddStudent.this,SecondActivity.class));
+                Toast.makeText(AddStudent.this,"Logout Successful", Toast.LENGTH_SHORT).show();
+                return true;
+//            case R.id.item3:
+//                Toast.makeText(this, "Item 3 selected", Toast.LENGTH_SHORT).show();
+//                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
     }
+
+
 
 }

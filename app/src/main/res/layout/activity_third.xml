@@ -9,50 +9,92 @@
 
     <Button
         android:id="@+id/csci409btn"
-        android:layout_width="215dp"
-        android:layout_height="351dp"
-        android:background="@drawable/android1"
-        android:text="CSCI409"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/button"
         android:onClick="android"
+        android:text="Collection1"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toStartOf="@+id/softengbth"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/softengbth"
-        android:layout_width="187dp"
-        android:layout_height="351dp"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/button"
         android:onClick="softeng"
-        android:text="CSCI416"
-        android:background="@drawable/software"
+        android:text="Collection2"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/csci409btn"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/CSCI282java"
-        android:layout_width="215dp"
-        android:layout_height="351dp"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_50sdp"
         android:layout_marginTop="28dp"
         android:layout_marginBottom="1dp"
-        android:background="@drawable/java"
+        android:background="@drawable/button"
         android:onClick="CSCI282db"
-        android:text="CSCI262"
+        android:text="Collection3"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/CSCI309data"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/softengbth" />
+        app:layout_constraintTop_toBottomOf="@+id/softengbth"
+        app:layout_constraintVertical_bias="0.295" />
 
     <Button
         android:id="@+id/CSCI309data"
-        android:layout_width="187dp"
-        android:layout_height="351dp"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_50sdp"
         android:layout_marginTop="30dp"
-        android:background="@drawable/databse"
+        android:background="@drawable/button"
         android:onClick="CSCI309db"
-        android:text="CSCI309"
+        android:text="Collection4"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/CSCI282java"
-        app:layout_constraintTop_toBottomOf="@+id/softengbth" />
+        app:layout_constraintTop_toBottomOf="@+id/softengbth"
+        app:layout_constraintVertical_bias="0.291" />
+
+    <!--    <Button-->
+<!--        android:id="@+id/logout"-->
+<!--        android:layout_width="@dimen/_100sdp"-->
+<!--        android:layout_height="@dimen/_50sdp"-->
+<!--        android:layout_marginStart="141dp"-->
+<!--        android:layout_marginTop="81dp"-->
+<!--        android:layout_marginEnd="141dp"-->
+<!--        android:layout_marginBottom="56dp"-->
+<!--        android:background="@drawable/button"-->
+<!--        android:onClick="CSCI309db"-->
+<!--        android:text="Logout"-->
+<!--        android:textAllCaps="false"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/CSCI282java" />-->
+
+    <!--    <com.google.android.material.appbar.AppBarLayout-->
+
+<!--    android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
+<!--        tools:ignore="MissingConstraints">-->
+
+<!--        <androidx.appcompat.widget.Toolbar-->
+<!--            android:id="@+id/toolbar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="?attr/actionBarSize"-->
+<!--            android:background="?attr/colorPrimary"-->
+<!--            app:layout_scrollFlags="scroll|enterAlways"-->
+<!--            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />-->
+<!--</com.google.android.material.appbar.AppBarLayout>-->
+
 </androidx.constraintlayout.widget.ConstraintLayout>

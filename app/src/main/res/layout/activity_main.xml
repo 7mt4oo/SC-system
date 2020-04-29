@@ -6,18 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:layout_centerHorizontal="true"
+    android:theme="@style/AppTheme.NoActionBar"
     android:background="@drawable/mcneese1" >
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="147dp"
-        android:layout_height="201dp"
-        android:layout_marginTop="16dp"
-        android:alpha="0.5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/mcneese" />
 
     <!--<EditText-->
         <!--android:id="@+id/editclassname"-->
@@ -38,40 +28,53 @@
         <!--app:layout_constraintStart_toStartOf="parent"-->
         <!--app:layout_constraintTop_toBottomOf="@+id/imageView4" />-->
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="147dp"
+        android:layout_height="201dp"
+        android:alpha="0.5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05"
+        app:srcCompat="@drawable/mcneese" />
+
     <Button
         android:id="@+id/submitbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="168dp"
-
-        android:layout_marginTop="184dp"
-        android:layout_marginEnd="151dp"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_44sdp"
+        android:layout_marginTop="340dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="117dp"
         android:background="@drawable/button"
         android:onClick="submit"
         android:padding="20dp"
         android:text="Login"
+        android:textAllCaps="false"
         android:textColor="#ffff"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <Button
         android:id="@+id/buttonRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="168dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="155dp"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_44sdp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="340dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="117dp"
         android:background="@drawable/button"
         android:onClick="register"
         android:padding="20dp"
+        android:textAllCaps="false"
         android:text="Register"
         android:textColor="#ffff"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.312"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/submitbutton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/submitbutton" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

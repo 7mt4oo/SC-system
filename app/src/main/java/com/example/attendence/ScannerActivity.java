@@ -23,8 +23,7 @@ public class ScannerActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scanner);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
 
         //Initialize barcode scanner view
         barcodeScannerView = findViewById(R.id.zxing_barcode_scanner);

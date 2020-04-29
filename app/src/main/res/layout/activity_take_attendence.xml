@@ -7,51 +7,24 @@
     tools:context=".TakeAttendence"
     android:background="@drawable/backgroundgradient">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="120dp"
-        android:layout_height="100dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="139dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="152dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="120dp"
-        android:layout_height="100dp"
-        android:layout_alignEnd="@+id/imageView"
-        android:layout_alignBottom="@+id/imageView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="139dp"
-        android:layout_marginTop="111dp"
-        android:layout_marginEnd="152dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/mcneesename" />
 
     <TextView
         android:id="@+id/tvDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="211dp"
+        android:layout_marginBottom="15dp"
         android:fontFamily="serif"
         android:text="Date"
         android:textAllCaps="true"
-        android:textFontWeight="15dp"
         android:textSize="35dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintBottom_toTopOf="@+id/classnamepassedtakeattendence"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
         android:id="@+id/classnamepassedtakeattendence"
@@ -61,13 +34,13 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="125dp"
 
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="123dp"
-        android:layout_marginBottom="17dp"
+        android:layout_marginBottom="37dp"
         android:fontFamily="serif"
         android:text="wwww"
         android:textAllCaps="true"
-        android:textFontWeight="15dp"
+
         android:textSize="35dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/takeattendence"
@@ -83,96 +56,88 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="125dp"
 
-        android:layout_marginTop="24dp"
         android:layout_marginEnd="123dp"
         android:layout_marginBottom="16dp"
         android:fontFamily="serif"
         android:text="0"
         android:textAllCaps="true"
-        android:textFontWeight="15dp"
         android:textSize="35dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textViewlast"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/attendencebtn" />
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <!--    <EditText-->
+<!--        android:id="@+id/takeattendenenceschool"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="120dp"-->
+<!--        android:layout_marginEnd="78dp"-->
+<!--        android:ems="10"-->
+<!--        android:hint=" School Name"-->
+<!--        android:inputType="textPersonName"-->
+<!--        android:text="Shohda Schools"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        tools:layout_editor_absoluteY="363dp" />-->
 
     <EditText
         android:id="@+id/takeattendence"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="78dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="320dp"
         android:ems="10"
         android:hint=" Student Id"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/takeattendenenceschool"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/classnamepassedtakeattendence" />
 
-    <EditText
-        android:id="@+id/takeattendenenceschool"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="78dp"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:hint=" School Name"
-        android:inputType="textPersonName"
-        android:text="Shohda Schools"
-        app:layout_constraintBottom_toTopOf="@+id/attendencebtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/takeattendence" />
-
     <Button
         android:id="@+id/attendencebtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="171dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginEnd="152dp"
-        android:layout_marginBottom="24dp"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginTop="38dp"
+        android:layout_marginBottom="252dp"
+        android:background="@drawable/button"
         android:text="Check In"
-        app:layout_constraintBottom_toTopOf="@+id/tvcounter"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/takeattendenenceschool" />
+        app:layout_constraintTop_toBottomOf="@+id/takeattendence"
+        app:layout_constraintVertical_bias="0.166" />
 
     <TextView
         android:id="@+id/textViewlast"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
-        android:layout_marginEnd="104dp"
-        android:layout_marginBottom="2dp"
+        android:layout_marginBottom="85dp"
         android:text="No of Present Student"
         android:textColor="#0725DD"
         android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvcounter" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="174dp"
-        android:layout_marginEnd="149dp"
-        android:layout_marginBottom="71dp"
-        android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginTop="34dp"
+        android:layout_marginBottom="256dp"
+        android:background="@drawable/button"
+        android:text="QR Scan"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.21"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/takeattendence"
+        app:layout_constraintVertical_bias="0.055" />
 </androidx.constraintlayout.widget.ConstraintLayout>

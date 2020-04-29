@@ -48,6 +48,7 @@
         android:layout_marginBottom="133dp"
         android:background="@drawable/circle"
         android:text="Scan"
+        android:textAllCaps="false"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

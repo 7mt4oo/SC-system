@@ -57,7 +57,7 @@ public class MainActivitysc extends AppCompatActivity {
 
             }
         });
-        firebaseDatabase = FirebaseDatabase.getInstance().getReference("Attendence");
+        firebaseDatabase = FirebaseDatabase.getInstance().getReference("Attendance");
 
 
     }
@@ -72,17 +72,20 @@ public class MainActivitysc extends AppCompatActivity {
                 // Here we need to handle scanned data...
 //                new SendRequest().execute();
                 //save data in firebase
-                firebaseDatabase.child("attendence_child").setValue(scannedData)
+                firebaseDatabase.child("attendance_child").setValue(scannedData)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-                                Toast.makeText(MainActivitysc.this,"Attendence Accepted",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivitysc.this,"Attendance Accepted",Toast.LENGTH_LONG).show();
+                                Intent intent = new Intent(getApplicationContext(), TakeAttendence.class);
+                                startActivity(intent);
 
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Toast.makeText(MainActivitysc.this,"Invalid",Toast.LENGTH_SHORT).show();
+
 
 
                     }
