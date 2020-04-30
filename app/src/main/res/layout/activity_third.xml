@@ -1,100 +1,280 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ThirdActivity"
-    android:background="@drawable/backgroundgradient">
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="#fcfcfc"
+    android:gravity="center"
+    android:id="@+id/ll">
+    <LinearLayout
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.cardview.widget.CardView
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:onClick="android"
+            android:id="@+id/bankcardId"
+            android:layout_width="160dp"
+            android:layout_height="190dp"
+            android:layout_margin="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
 
-    <Button
-        android:id="@+id/csci409btn"
-        android:layout_width="@dimen/_100sdp"
-        android:layout_height="@dimen/_50sdp"
-        android:layout_marginTop="200dp"
-        android:background="@drawable/button"
-        android:onClick="android"
-        android:text="Collection1"
-        android:textAllCaps="false"
-        app:layout_constraintEnd_toStartOf="@+id/softengbth"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/cercleshape"
+                    android:padding="10dp"
+                    android:src="@drawable/banking"
+                    android:tint="#fff" />
 
-    <Button
-        android:id="@+id/softengbth"
-        android:layout_width="@dimen/_100sdp"
-        android:layout_height="@dimen/_50sdp"
-        android:layout_marginTop="200dp"
-        android:background="@drawable/button"
-        android:onClick="softeng"
-        android:text="Collection2"
-        android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/csci409btn"
-        app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/csci409btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhite"
+                    android:gravity="center"
+                    android:onClick="android"
+                    android:padding="5dp"
+                    android:textColor="@color/border_color"
+                    android:textStyle="bold"
+                    android:text="Group 1"
+                    android:textAlignment="center"
+                    android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/CSCI282java"
-        android:layout_width="@dimen/_100sdp"
-        android:layout_height="@dimen/_50sdp"
-        android:layout_marginTop="28dp"
-        android:layout_marginBottom="1dp"
-        android:background="@drawable/button"
-        android:onClick="CSCI282db"
-        android:text="Collection3"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/CSCI309data"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/softengbth"
-        app:layout_constraintVertical_bias="0.295" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/lightgray"
+                    android:layout_margin="10dp"/>
 
-    <Button
-        android:id="@+id/CSCI309data"
-        android:layout_width="@dimen/_100sdp"
-        android:layout_height="@dimen/_50sdp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/button"
-        android:onClick="CSCI309db"
-        android:text="Collection4"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/CSCI282java"
-        app:layout_constraintTop_toBottomOf="@+id/softengbth"
-        app:layout_constraintVertical_bias="0.291" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/border_color"
+                    android:text="Take Attendance"/>
 
-    <!--    <Button-->
-<!--        android:id="@+id/logout"-->
-<!--        android:layout_width="@dimen/_100sdp"-->
-<!--        android:layout_height="@dimen/_50sdp"-->
-<!--        android:layout_marginStart="141dp"-->
-<!--        android:layout_marginTop="81dp"-->
-<!--        android:layout_marginEnd="141dp"-->
-<!--        android:layout_marginBottom="56dp"-->
-<!--        android:background="@drawable/button"-->
-<!--        android:onClick="CSCI309db"-->
-<!--        android:text="Logout"-->
-<!--        android:textAllCaps="false"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/CSCI282java" />-->
 
-    <!--    <com.google.android.material.appbar.AppBarLayout-->
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:onClick="softeng"
+            android:layout_width="160dp"
+            android:layout_height="190dp"
+            android:layout_margin="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
 
-<!--    android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
-<!--        tools:ignore="MissingConstraints">-->
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/cercleshape"
+                    android:padding="10dp"
+                    android:src="@drawable/banking"
+                    android:tint="#fff" />
 
-<!--        <androidx.appcompat.widget.Toolbar-->
-<!--            android:id="@+id/toolbar"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="?attr/actionBarSize"-->
-<!--            android:background="?attr/colorPrimary"-->
-<!--            app:layout_scrollFlags="scroll|enterAlways"-->
-<!--            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />-->
-<!--</com.google.android.material.appbar.AppBarLayout>-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:id="@+id/softengbth"
+                    android:onClick="softeng"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"
+                    android:background="@color/colorWhite"
+                    android:text="Group 2"
+                    android:textColor="@android:color/black"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/lightgray"
+                    android:layout_margin="10dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/border_color"
+                    android:layout_marginTop="10dp"
+                    android:text="Take Attendance"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+    <LinearLayout
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.cardview.widget.CardView
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:onClick="CSCI282db"
+            android:layout_width="160dp"
+            android:layout_height="190dp"
+            android:layout_margin="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:tint="#fff"
+                    android:src="@drawable/banking"
+                    android:background="@drawable/cercleshape"
+                    android:padding="10dp"/>
+                <TextView
+                    android:id="@+id/CSCI282java"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhite"
+                    android:gravity="center"
+                    android:onClick="CSCI282db"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:text="Group 3"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/black" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/lightgray"
+                    android:layout_margin="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/border_color"
+                    android:text="Take Attendance"/>
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:onClick="CSCI309db"
+            android:layout_width="160dp"
+            android:layout_height="190dp"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:tint="#fff"
+                    android:padding="10dp"
+                    android:src="@drawable/banking"
+                    android:background="@drawable/cercleshape"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:id="@+id/CSCI309data"
+                    android:onClick="CSCI309db"
+                    android:textAllCaps="false"
+                    android:background="@color/colorWhite"
+                    android:text="Group 4"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/lightgray" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Take Attendance"
+                    android:textColor="@color/border_color"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+    <LinearLayout
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.cardview.widget.CardView
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:layout_width="340dp"
+            android:layout_height="150dp"
+            android:layout_margin="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="64dp"
+                    android:id="@+id/button"
+                    android:layout_height="64dp"
+                    android:background="@drawable/cercleshape"
+                    android:tint="#fff"
+                    android:padding="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:text="Add"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/lightgray"
+                    android:layout_margin="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textColor="@android:color/darker_gray"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+</LinearLayout>

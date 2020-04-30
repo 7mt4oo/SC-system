@@ -2,30 +2,33 @@ package com.example.attendence;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
 public class ThirdActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
 
-    private  Button btnandroid;
-    private  Button btneng,btnjava,btndatabase,logout;
-
+    private TextView btnandroid;
+    private TextView btneng;
+    private TextView btnjava;
+    private TextView btndatabase;
+    private  Button logout;
     int request_code =1;
     //private Button logout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         setContentView(R.layout.activity_third);
         //logout = (Button)findViewById(R.id.btnlogout);
@@ -35,6 +38,8 @@ public class ThirdActivity extends AppCompatActivity {
         btnjava = findViewById(R.id.CSCI282java);
         btndatabase = findViewById(R.id.CSCI309data);
         logout = findViewById(R.id.logout);
+
+
 //        logout.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
@@ -152,4 +157,10 @@ public class ThirdActivity extends AppCompatActivity {
         startActivityForResult(classintent,request_code);
 
     }
+
+
+
+
+
+
 }
