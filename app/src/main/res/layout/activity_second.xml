@@ -15,9 +15,8 @@
         android:layout_alignEnd="@+id/editpassword"
         android:layout_alignBottom="@+id/editpassword"
         android:layout_marginStart="108dp"
-        android:layout_marginTop="50dp"
         android:layout_marginEnd="108dp"
-        android:layout_marginBottom="217dp"
+        android:layout_marginBottom="176dp"
         android:background="@drawable/submit"
         android:onClick="login"
         android:padding="20dp"
@@ -25,15 +24,13 @@
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editpassword" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/editemail"
         android:layout_width="@dimen/_200sdp"
         android:layout_height="@dimen/_50sdp"
-        android:layout_marginTop="269dp"
-        android:layout_marginBottom="36dp"
         android:background="@drawable/coursename"
         android:drawableLeft="@drawable/ic_email_blue_24dp"
         android:hint=" Email "
@@ -45,19 +42,18 @@
         android:textColorHint="#2327E7"
         android:textSize="15dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/editpassword"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.382" />
 
     <EditText
         android:id="@+id/editpassword"
         android:layout_width="@dimen/_200sdp"
         android:layout_height="@dimen/_50sdp"
         android:layout_centerHorizontal="true"
-        android:textStyle="bold"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="24dp"
         android:autoSizeMaxTextSize="2dp"
         android:autoSizeTextType="uniform"
         android:background="@drawable/coursename"
@@ -70,10 +66,11 @@
         android:paddingRight="10dp"
         android:textAllCaps="true"
         android:textColorHint="#2327E7"
-        app:layout_constraintBottom_toTopOf="@+id/loginmainbutton"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editemail" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

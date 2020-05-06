@@ -22,6 +22,7 @@ public class AddStudent extends AppCompatActivity {
     private EditText studentName, mcneeseId;
     private Button add;
     private Button delete;
+    private Button btnView;
     private FirebaseAuth firebaseAuth;
 
     private TextView btnvaluedatabase;
@@ -40,10 +41,18 @@ public class AddStudent extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference("students");
 
 
-        studentName = (EditText) findViewById(R.id.studentNamedatabase);
-        mcneeseId = (EditText) findViewById(R.id.mcneeseiddatabase);
-        add = (Button) findViewById(R.id.addStudentdatabase);
-        delete = (Button) findViewById(R.id.deleteStudentdatabase);
+        studentName = findViewById(R.id.studentNamedatabase);
+        mcneeseId = findViewById(R.id.mcneeseiddatabase);
+        add = findViewById(R.id.addStudentdatabase);
+        delete = findViewById(R.id.deleteStudentdatabase);
+        btnView=findViewById(R.id.view_items_screen);
+        btnView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AddStudent.this, ViewDatabase.class);
+                startActivity(intent);
+            }
+        });
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override

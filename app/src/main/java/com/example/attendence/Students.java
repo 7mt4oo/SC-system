@@ -1,11 +1,14 @@
 package com.example.attendence;
 
+import com.google.firebase.database.IgnoreExtraProperties;
+
+@IgnoreExtraProperties
 public class Students {
     private String studenId;
     private String studentName;
     private String mcneeseId;
 
-    public  Students(){
+    public Students() {
 
     }
 
@@ -25,5 +28,26 @@ public class Students {
 
     public String getMcneeseId() {
         return mcneeseId;
+    }
+
+    public void setStudenId(String studenId) {
+        this.studenId = studenId;
+    }
+
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
+    }
+
+    public void setMcneeseId(String mcneeseId) {
+        this.mcneeseId = mcneeseId;
+    }
+
+    @Override
+    public String toString() {
+        return "Students{" +
+                "studenId='" + studenId + '\'' +
+                ", studentName='" + studentName + '\'' +
+                ", mcneeseId='" + mcneeseId + '\'' +
+                '}';
     }
 }

@@ -1,116 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/backgroundgradient">
+    android:background="@drawable/backgroundgradient"
+    tools:context=".MainActivity">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/backgroundgradient"
-        tools:context=".MainActivity">
+    <TextView
+        android:id="@+id/passedclassnamedatabase"
+        android:layout_width="311dp"
+        android:layout_height="61dp"
+        android:layout_alignTop="@+id/imageView4"
+        android:layout_centerHorizontal="true"
 
-        <TextView
-            android:id="@+id/passedclassnamedatabase"
-            android:layout_width="266dp"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/imageView4"
-            android:layout_centerHorizontal="true"
-            android:layout_marginStart="142dp"
-            android:layout_marginTop="250dp"
-            android:layout_marginEnd="120dp"
+        android:fontFamily="serif"
+        android:text="wwww"
+        android:textAllCaps="true"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.309"></TextView>
 
-            android:fontFamily="serif"
-            android:text="wwww"
-            android:textAllCaps="true"
-            android:textSize="35dp"
-            android:textStyle="bold"></TextView>
+    <EditText
+        android:id="@+id/studentNamedatabase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoSizeMaxTextSize="2dp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/coursename"
+        android:ems="10"
 
-        <EditText
-            android:id="@+id/studentNamedatabase"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="420dp"
-            android:layout_marginRight="20dp"
-            android:autoSizeMaxTextSize="2dp"
-            android:autoSizeTextType="uniform"
-            android:background="@drawable/coursename"
-            android:ems="10"
-            android:hint="Student Name"
-            android:inputType="text"
+        android:hint="Student Name"
+        android:inputType="text"
+        android:padding="20dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textAllCaps="true"
+        android:textColorHint="#2327E7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.623" />
 
-            android:padding="20dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:textAllCaps="true"
-            android:textColorHint="#2327E7" />
+    <EditText
+        android:id="@+id/mcneeseiddatabase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoSizeMaxTextSize="2dp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/coursename"
+        android:ems="10"
 
-        <EditText
-            android:id="@+id/mcneeseiddatabase"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="340dp"
-            android:layout_marginRight="20dp"
-            android:autoSizeMaxTextSize="2dp"
-            android:autoSizeTextType="uniform"
-            android:background="@drawable/coursename"
-            android:ems="10"
-            android:hint="Mcneese id"
-            android:inputType="text"
+        android:hint="Mcneese id"
+        android:inputType="text"
+        android:padding="20dp"
 
-            android:padding="20dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textAllCaps="true"
+        android:textColorHint="#2327E7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-            android:textAllCaps="true"
-            android:textColorHint="#2327E7" />
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:layout_alignEnd="@+id/imageView"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_centerHorizontal="true"
 
+        app:layout_constraintBottom_toTopOf="@+id/passedclassnamedatabase"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/mcneesename" />
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="120dp"
-            android:layout_height="100dp"
-            android:layout_alignEnd="@+id/imageView"
-            android:layout_alignBottom="@+id/imageView"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="100dp"
+    <Button
+        android:id="@+id/addStudentdatabase"
+        android:layout_width="@dimen/_110sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_alignLeft="@+id/studentNamedatabase"
+        android:layout_alignBottom="@+id/studentNamedatabase"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/submit"
+        android:onClick="addStudentDatabase"
+        android:padding="20dp"
+        android:text="Add"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.763" />
 
-            android:layout_marginBottom="-75dp"
-            app:srcCompat="@drawable/mcneesename" />
+    <Button
+        android:id="@+id/deleteStudentdatabase"
+        android:layout_width="@dimen/_110sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_alignLeft="@+id/studentNamedatabase"
+        android:layout_alignBottom="@+id/addStudentdatabase"
 
-        <Button
-            android:id="@+id/addStudentdatabase"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/studentNamedatabase"
-            android:layout_alignBottom="@+id/studentNamedatabase"
-            android:layout_marginLeft="-38dp"
-            android:layout_marginBottom="-108dp"
-            android:background="@drawable/submit"
-            android:onClick="addStudentDatabase"
-            android:textAllCaps="false"
-            android:padding="20dp"
-            android:text="Add" />
+        android:layout_marginStart="15dp"
+        android:background="@drawable/submit"
+        android:onClick="deleteStudentDatabase"
+        android:padding="20dp"
+        android:text="Delete"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.763" />
 
-        <Button
-            android:id="@+id/deleteStudentdatabase"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/studentNamedatabase"
-            android:layout_alignBottom="@+id/addStudentdatabase"
-            android:layout_marginLeft="122dp"
-            android:layout_marginBottom="-1dp"
-
-            android:background="@drawable/submit"
-            android:onClick="deleteStudentDatabase"
-            android:textAllCaps="false"
-            android:padding="20dp"
-            android:text="Delete" />
-
-    </RelativeLayout>
-</RelativeLayout>
+    <Button
+        android:id="@+id/view_items_screen"
+        android:layout_width="@dimen/_110sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_alignLeft="@+id/studentNamedatabase"
+        android:layout_alignBottom="@+id/addStudentdatabase"
+        android:layout_marginStart="15dp"
+        android:background="@drawable/submit"
+        android:padding="20dp"
+        android:text="View Database Contents"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.909" />
+</androidx.constraintlayout.widget.ConstraintLayout>
