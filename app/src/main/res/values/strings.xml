@@ -8,10 +8,13 @@
     <string name="message">Place a barcode inside the viewfinder rectangle to scan it.</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
 
-<!--    <string-array name="usertype">-->
-<!--        <item>Admin</item>-->
-<!--        <item>User</item>-->
-<!--        <item>supervisor</item>-->
-<!--    </string-array>-->
+    <string-array name="usertype">
+
+        <item>Student</item>
+        <item>Admin</item>
+        <item>User</item>
+        <item>Supervisor</item>
+
+    </string-array>
 
 </resources>
