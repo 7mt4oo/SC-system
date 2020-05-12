@@ -2,22 +2,141 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:scrollbars="none"
+    android:background="@drawable/circlewww"
+    android:paddingLeft="@dimen/_4sdp"
+    android:paddingTop="@dimen/_8sdp"
+    android:paddingRight="@dimen/_4sdp"
+    android:paddingBottom="@dimen/_6sdp"
+    android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_weight="1">
+
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/student_name"
+        android:textStyle="bold"
+        android:textSize="@dimen/_16sdp"
         android:textColor="@android:color/black"/>
 
     <TextView
+
+        android:id="@+id/text_view_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/text_view_2"/>
+        android:textSize="@dimen/_16sdp"
+        android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/text_view_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/text_view_3"/>
+        android:textSize="@dimen/_16sdp"
+        android:textStyle="bold" />
 
-</LinearLayout>
+    </LinearLayout>
+    </LinearLayout>
+
+<!--    <?xml version="1.0" encoding="utf-8"?>-->
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:background="@drawable/circlewhite"-->
+<!--android:scrollbars="none"-->
+<!--android:paddingLeft="@dimen/_4sdp"-->
+<!--android:paddingTop="@dimen/_8sdp"-->
+<!--android:paddingRight="@dimen/_4sdp"-->
+<!--android:paddingBottom="@dimen/_6sdp"-->
+<!--android:orientation="horizontal">-->
+
+<!--<LinearLayout-->
+<!--    android:layout_width="0dp"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:orientation="vertical"-->
+<!--    android:layout_weight="1">-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/food_image"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:adjustViewBounds="true"-->
+<!--        android:padding="@dimen/_5sdp"-->
+<!--        android:contentDescription="@string/app_name"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:src="@drawable/fruits" />-->
+
+<!--</LinearLayout>-->
+
+<!--<LinearLayout-->
+<!--    android:layout_width="0dp"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:orientation="vertical"-->
+<!--    android:paddingLeft="@dimen/_8sdp"-->
+<!--    android:paddingRight="@dimen/_8sdp"-->
+<!--    android:layout_weight="3">-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/food_name"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/sushi"-->
+<!--        android:textColor="@color/colorBlack"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textSize="@dimen/_13sdp"/>-->
+
+<!--    <RelativeLayout-->
+<!--        android:layout_width="278dp"-->
+<!--        android:layout_height="58dp"-->
+<!--        android:layout_marginTop="@dimen/_4sdp">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/food_price"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentStart="true"-->
+<!--            android:layout_alignParentLeft="true"-->
+<!--            android:layout_marginTop="@dimen/_8sdp"-->
+<!--            android:text="@string/price"-->
+<!--            android:textColor="@color/colorAccent"-->
+<!--            android:textSize="@dimen/_12sdp"-->
+<!--            android:textStyle="bold" />-->
+
+
+<!--        <ImageView-->
+<!--            android:id="@+id/food_detail"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_alignParentRight="true"-->
+<!--            android:contentDescription="@string/app_name"-->
+<!--            android:padding="@dimen/_8sdp"-->
+<!--            android:src="@drawable/link"-->
+<!--            android:visibility="gone" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView4"-->
+<!--            android:layout_width="52dp"-->
+<!--            android:layout_height="58dp"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_marginStart="156dp"-->
+<!--            android:layout_marginTop="-14dp"-->
+<!--            android:layout_marginEnd="1dp"-->
+<!--            android:layout_marginBottom="14dp"-->
+<!--            android:layout_toEndOf="@+id/food_price"-->
+<!--            android:background="@drawable/ic_right" />-->
+
+
+<!--    </RelativeLayout>-->
+
+<!--</LinearLayout>-->
+
+<!--</LinearLayout>-->

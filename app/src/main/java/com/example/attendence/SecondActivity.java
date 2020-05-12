@@ -56,18 +56,19 @@ public class SecondActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 String item = spinner.getSelectedItem().toString();
-                if(Email.getText().toString().equals("admin")&& Password.getText().toString().equals("admin")&& item.equals("Admin")){
+                if (Email.getText().toString().equals("admin") && Password.getText().toString().equals("admin") && item.equals("Admin")) {
                     Intent intent = new Intent(SecondActivity.this, AddStudent.class);
                     startActivity(intent);
-                }else if(Email.getText().toString().equals("user")&& Password.getText().toString().equals("user")&& item.equals("User")){
+                } else if (Email.getText().toString().equals("user") && Password.getText().toString().equals("user") && item.equals("User")) {
                     Intent intent = new Intent(SecondActivity.this, AddStudent.class);
                     startActivity(intent);
-                }else if(Email.getText().toString().equals("super")&& Password.getText().toString().equals("super")&& item.equals("Supervisor")){
+                } else if (Email.getText().toString().equals("super") && Password.getText().toString().equals("super") && item.equals("Supervisor")) {
                     Intent intent = new Intent(SecondActivity.this, AddStudent.class);
                     startActivity(intent);
-                }else {
-//                    Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_LONG).show();
                 }
+                //                    Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_LONG).show();
+
+
 //                if (Email.getText().toString().equals("admin@admin.com") && Password.getText().toString().equals("admin")){
 //                Toast.makeText(SecondActivity.this,"LOGIN SUCCESSFUL", Toast.LENGTH_SHORT).show();
 //                    Intent intent = new Intent(getApplicationContext(), AddStudent.class);
