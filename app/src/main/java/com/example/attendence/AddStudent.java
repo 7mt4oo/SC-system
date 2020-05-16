@@ -24,6 +24,7 @@ public class AddStudent extends AppCompatActivity {
     private Button delete;
     private Button btnView;
     private FirebaseAuth firebaseAuth;
+    Button update;
 
     private TextView btnvaluedatabase;
     DatabaseReference databaseReference;
@@ -39,8 +40,7 @@ public class AddStudent extends AppCompatActivity {
         btnvaluedatabase.setText(classnamepassed);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("students");
-
-
+        update=findViewById(R.id.updateStudentdatabase);
         studentName = findViewById(R.id.studentNamedatabase);
         mcneeseId = findViewById(R.id.mcneeseiddatabase);
         add = findViewById(R.id.addStudentdatabase);
@@ -54,6 +54,12 @@ public class AddStudent extends AppCompatActivity {
             }
         });
 
+        update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                updateStudentdatabase();
+            }
+        });
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,6 +76,24 @@ public class AddStudent extends AppCompatActivity {
 
     }
 
+
+    public void updateStudentdatabase() {
+        String studentNameValue = studentName.getText().toString();
+        String mcneeseIdValue = mcneeseId.getText().toString();
+
+        if (!TextUtils.isEmpty(studentNameValue) && !TextUtils.isEmpty(mcneeseIdValue)) {
+            String id = databaseReference.push().getKey();
+            Students students = new Students(id, studentNameValue, mcneeseIdValue);
+            // databaseReference.child(bttnName.getText().toString()).push().setValue(students);
+            databaseReference.child(btnvaluedatabase.getText().toString()).child(mcneeseId.getText().toString()).setValue(students);
+
+            studentName.getText();
+            mcneeseId.getText();
+            Toast.makeText(AddStudent.this, "Student Updated", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(AddStudent.this, "Please Fill Fields", Toast.LENGTH_SHORT).show();
+        }
+    }
 
     public void addStudent() {
         String studentNameValue = studentName.getText().toString();

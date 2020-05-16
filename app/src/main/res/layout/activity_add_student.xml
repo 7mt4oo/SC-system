@@ -10,8 +10,8 @@
 
     <TextView
         android:id="@+id/passedclassnamedatabase"
-        android:layout_width="311dp"
-        android:layout_height="61dp"
+        android:layout_width="299dp"
+        android:layout_height="57dp"
         android:layout_alignTop="@+id/imageView4"
         android:layout_centerHorizontal="true"
 
@@ -19,12 +19,13 @@
         android:text="wwww"
         android:textAllCaps="true"
         android:textSize="35dp"
+        android:gravity="center"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.309"></TextView>
+        app:layout_constraintVertical_bias="0.309"/>
 
     <EditText
         android:id="@+id/studentNamedatabase"
@@ -56,11 +57,9 @@
         android:autoSizeTextType="uniform"
         android:background="@drawable/coursename"
         android:ems="10"
-
-        android:hint="Mcneese id"
+        android:hint="Student ID"
         android:inputType="text"
         android:padding="20dp"
-
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:textAllCaps="true"
@@ -90,7 +89,7 @@
         android:layout_height="@dimen/_45sdp"
         android:layout_alignLeft="@+id/studentNamedatabase"
         android:layout_alignBottom="@+id/studentNamedatabase"
-        android:layout_marginEnd="15dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/submit"
         android:onClick="addStudentDatabase"
         android:padding="20dp"
@@ -110,7 +109,7 @@
         android:layout_alignLeft="@+id/studentNamedatabase"
         android:layout_alignBottom="@+id/addStudentdatabase"
 
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="16dp"
         android:background="@drawable/submit"
         android:onClick="deleteStudentDatabase"
         android:padding="20dp"
@@ -124,20 +123,41 @@
         app:layout_constraintVertical_bias="0.763" />
 
     <Button
+        android:id="@+id/updateStudentdatabase"
+        android:layout_width="@dimen/_110sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_alignLeft="@+id/studentNamedatabase"
+        android:layout_alignBottom="@+id/addStudentdatabase"
+
+        android:layout_marginStart="16dp"
+        android:background="@drawable/submit"
+        android:onClick="updateStudentDatabase"
+        android:padding="20dp"
+        android:text="Update"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.913" />
+
+    <Button
         android:id="@+id/view_items_screen"
         android:layout_width="@dimen/_110sdp"
         android:layout_height="@dimen/_45sdp"
         android:layout_alignLeft="@+id/studentNamedatabase"
         android:layout_alignBottom="@+id/addStudentdatabase"
         android:layout_marginStart="15dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/submit"
         android:padding="20dp"
         android:text="View Database Contents"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintHorizontal_bias="0.85"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.909" />
+        app:layout_constraintVertical_bias="0.913" />
 </androidx.constraintlayout.widget.ConstraintLayout>
