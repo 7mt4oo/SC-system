@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TakeAttendence"
-    android:background="@drawable/backgroundgradient">
+    android:background="@color/colorWhite">
 
 
     <TextView
@@ -102,7 +102,7 @@
         android:layout_height="@dimen/_50sdp"
         android:layout_marginTop="38dp"
         android:layout_marginBottom="252dp"
-        android:background="@drawable/button"
+        android:background="@drawable/circlew"
         android:text="Check In"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -131,7 +131,7 @@
         android:layout_height="@dimen/_50sdp"
         android:layout_marginTop="38dp"
         android:layout_marginBottom="256dp"
-        android:background="@drawable/button"
+        android:background="@drawable/circlew"
         android:text="QR Scan"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"

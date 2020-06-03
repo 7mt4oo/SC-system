@@ -13,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import es.dmoral.toasty.Toasty;
+
 public class FifthActivity extends AppCompatActivity {
     private TextView btnvalue;
     int request_code = 1;
@@ -56,7 +58,7 @@ public class FifthActivity extends AppCompatActivity {
         firebaseAuth.signOut();
         finish();
         startActivity(new Intent(FifthActivity.this, SecondActivity.class));
-        Toast.makeText(FifthActivity.this, "LOGOUT SUCCESSFUL", Toast.LENGTH_SHORT).show();
+        Toasty.success(this, "Logout Successful", Toast.LENGTH_SHORT, true).show();
 
     }
 

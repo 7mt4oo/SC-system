@@ -64,6 +64,10 @@ dependencies {
     //Cardview
     implementation 'androidx.cardview:cardview:1.0.0'
 
+    //msg toast
+    implementation 'com.github.GrenderG:Toasty:1.4.2'
+
+
 }
 
 apply plugin: 'com.google.gms.google-services'

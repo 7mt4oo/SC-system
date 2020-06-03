@@ -15,6 +15,8 @@ import androidx.cardview.widget.CardView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import es.dmoral.toasty.Toasty;
+
 public class ThirdActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
 
@@ -103,7 +105,7 @@ public class ThirdActivity extends AppCompatActivity {
                 firebaseAuth.signOut();
                 finish();
                 startActivity(new Intent(ThirdActivity.this,SecondActivity.class));
-                Toast.makeText(ThirdActivity.this,"Logout Successful", Toast.LENGTH_SHORT).show();
+                Toasty.success(ThirdActivity.this, "Login Successful", Toast.LENGTH_SHORT, true).show();
                 return true;
 //            case R.id.item3:
 //                Toast.makeText(this, "Item 3 selected", Toast.LENGTH_SHORT).show();

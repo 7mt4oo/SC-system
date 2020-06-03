@@ -3,6 +3,7 @@ package com.example.attendence;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -15,6 +16,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import es.dmoral.toasty.Toasty;
+
 public class FourthActivity extends AppCompatActivity {
 
     private EditText UserNameEmail, UserClassName, UserPasswordRegister;
@@ -26,6 +29,7 @@ public class FourthActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fourth);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         UserNameEmail = findViewById(R.id.profemail);
         UserClassName = findViewById(R.id.classnameregister);
@@ -45,10 +49,14 @@ public class FourthActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
-                                Toast.makeText(FourthActivity.this,"Registration Successful",Toast.LENGTH_SHORT).show();
+                                Toasty.success(FourthActivity.this, "Registration Successful", Toast.LENGTH_SHORT, true).show();
+
+//                                Toast.makeText(FourthActivity.this,"Registration Successful",Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(FourthActivity.this,ThirdActivity.class));
                             }else{
-                                Toast.makeText(FourthActivity.this,"Registration Failed",Toast.LENGTH_SHORT).show();
+//                                Toast.makeText(FourthActivity.this,"Registration Failed",Toast.LENGTH_SHORT).show();
+                                Toasty.error(FourthActivity.this, "Registration Failed", Toast.LENGTH_SHORT, true).show();
+
                             }
 
                         }
@@ -66,7 +74,7 @@ public class FourthActivity extends AppCompatActivity {
         String classname = UserClassName.getText().toString();
 
         if(name.isEmpty() && password.isEmpty() || classname.isEmpty()){
-            Toast.makeText(this,"Please Enter all details",Toast.LENGTH_SHORT).show();
+            Toasty.error(this, "Please Fill Fields", Toast.LENGTH_SHORT, true).show();
         }else{
             result =true;
         }

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:layout_centerHorizontal="true"
-    android:background="@drawable/backgroundgradient" >
+    android:background="@color/colorWhite" >
 
     <ImageView
         android:id="@+id/imageView4"
@@ -30,6 +30,8 @@
         android:layout_marginEnd="120dp"
         android:layout_marginBottom="86dp"
         android:fontFamily="serif"
+        android:textColor="@color/colorPrimaryDark"
+
         android:text="wwww"
         android:textAllCaps="true"
         android:textSize="35dp"
@@ -62,9 +64,9 @@
         android:id="@+id/addstd"
         android:layout_width="@dimen/_200sdp"
         android:layout_height="@dimen/_50sdp"
+        android:background="@drawable/circlew"
 
         android:layout_marginBottom="59dp"
-        android:background="@drawable/button"
         android:onClick="addStudents"
         android:padding="20dp"
         android:text="Add Student"
@@ -80,8 +82,9 @@
         android:layout_width="@dimen/_200sdp"
         android:layout_height="@dimen/_50sdp"
         android:layout_marginBottom="160dp"
+        android:background="@drawable/circlew"
+
         android:textAllCaps="false"
-        android:background="@drawable/button"
         android:onClick="takeAttendence"
         android:padding="20dp"
         android:text="Take Attendence"

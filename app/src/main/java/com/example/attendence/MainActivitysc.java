@@ -38,6 +38,8 @@ import java.util.Iterator;
 
 import javax.net.ssl.HttpsURLConnection;
 
+import es.dmoral.toasty.Toasty;
+
 public class MainActivitysc extends AppCompatActivity {
     String scannedData;
     private DatabaseReference firebaseDatabase;
@@ -76,7 +78,9 @@ public class MainActivitysc extends AppCompatActivity {
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-                                Toast.makeText(MainActivitysc.this,"Attendance Accepted",Toast.LENGTH_LONG).show();
+                                Toasty.success(MainActivitysc.this, "Attendance Accepted", Toast.LENGTH_SHORT, true).show();
+
+//                                Toast.makeText(MainActivitysc.this,"Attendance Accepted",Toast.LENGTH_LONG).show();
                                 Intent intent = new Intent(getApplicationContext(), TakeAttendence.class);
                                 startActivity(intent);
 
@@ -84,7 +88,9 @@ public class MainActivitysc extends AppCompatActivity {
                         }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(MainActivitysc.this,"Invalid",Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(MainActivitysc.this,"Invalid",Toast.LENGTH_SHORT).show();
+                        Toasty.error(MainActivitysc.this, "Invalid", Toast.LENGTH_SHORT, true).show();
+
 
 
 
@@ -96,7 +102,10 @@ public class MainActivitysc extends AppCompatActivity {
             }
             if (result != null) {
                 if (result.getContents() == null) {
-                    Toast.makeText(this, "Scan Cancelled", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(this, "Scan Cancelled", Toast.LENGTH_LONG).show();
+                    Toasty.error(MainActivitysc.this, "Scan Cancelled", Toast.LENGTH_SHORT, true).show();
+
+
                 } else {
                     //show dialogue with result
                     showResultDialogue(result.getContents());

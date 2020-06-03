@@ -14,8 +14,6 @@
         android:layout_alignLeft="@+id/editpassword"
         android:layout_alignEnd="@+id/editpassword"
         android:layout_alignBottom="@+id/editpassword"
-        android:layout_marginStart="108dp"
-        android:layout_marginEnd="108dp"
         android:layout_marginBottom="176dp"
         android:background="@drawable/submit"
         android:onClick="login"
@@ -24,7 +22,6 @@
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText

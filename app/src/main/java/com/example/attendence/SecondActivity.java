@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,7 +21,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import es.dmoral.toasty.Toasty;
+
 public class SecondActivity extends AppCompatActivity {
+
     private EditText Email;
     private EditText Password;
     private Button Login;
@@ -34,6 +38,7 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         Email = findViewById(R.id.editemail);
         Password = findViewById(R.id.editpassword);
@@ -103,7 +108,9 @@ public class SecondActivity extends AppCompatActivity {
                 if(task.isSuccessful()){
 
                     processDialog.dismiss();
-                    Toast.makeText(SecondActivity.this,"Login Successful", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(SecondActivity.this,"Login Successful", Toast.LENGTH_SHORT).show();
+                    Toasty.success(SecondActivity.this, "Login Successful", Toast.LENGTH_SHORT, true).show();
+
                     startActivity(new Intent(SecondActivity.this,ThirdActivity.class));
                 }else {
                     Toast.makeText(SecondActivity.this,"Login Failed", Toast.LENGTH_SHORT).show();

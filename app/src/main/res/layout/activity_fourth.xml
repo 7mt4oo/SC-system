@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/backgroundgradient">
+    android:background="@color/colorWhite">
 
 
     <EditText
@@ -82,7 +82,7 @@
         android:layout_alignLeft="@+id/passwordRegister"
         android:layout_alignEnd="@+id/passwordRegister"
         android:layout_alignBottom="@+id/passwordRegister"
-        android:background="@drawable/submit"
+        android:background="@drawable/circlew"
         android:onClick="register"
         android:padding="20dp"
         android:text="Register"

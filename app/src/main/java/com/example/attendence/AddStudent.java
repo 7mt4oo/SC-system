@@ -1,6 +1,7 @@
 package com.example.attendence;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Menu;
@@ -12,11 +13,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import es.dmoral.toasty.Toasty;
 
 public class AddStudent extends AppCompatActivity {
     private EditText studentName, mcneeseId;
@@ -26,7 +30,7 @@ public class AddStudent extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     Button update;
 
-    private TextView btnvaluedatabase;
+    public TextView btnvaluedatabase;
     DatabaseReference databaseReference;
 
     @Override
@@ -76,7 +80,6 @@ public class AddStudent extends AppCompatActivity {
 
     }
 
-
     public void updateStudentdatabase() {
         String studentNameValue = studentName.getText().toString();
         String mcneeseIdValue = mcneeseId.getText().toString();
@@ -89,9 +92,12 @@ public class AddStudent extends AppCompatActivity {
 
             studentName.getText();
             mcneeseId.getText();
-            Toast.makeText(AddStudent.this, "Student Updated", Toast.LENGTH_SHORT).show();
+
+            Toasty.success(this, "Student Updated!", Toast.LENGTH_SHORT, true).show();
+
+//            Toast.makeText(AddStudent.this, "Student Updated", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(AddStudent.this, "Please Fill Fields", Toast.LENGTH_SHORT).show();
+            Toasty.error(this, "Please Fill Fields", Toast.LENGTH_SHORT, true).show();
         }
     }
 
@@ -105,9 +111,13 @@ public class AddStudent extends AppCompatActivity {
             databaseReference.child(btnvaluedatabase.getText().toString()).child(mcneeseId.getText().toString()).setValue(students);
             studentName.setText("");
             mcneeseId.setText("");
-            Toast.makeText(AddStudent.this, "Student Details Added", Toast.LENGTH_SHORT).show();
+            Toasty.success(this, "Student Details Added!", Toast.LENGTH_SHORT, true).show();
+
+//            Toast.makeText(AddStudent.this, "Student Details Added", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(AddStudent.this, "Please Fill Fields", Toast.LENGTH_SHORT).show();
+            Toasty.error(this, "Please Fill Fields", Toast.LENGTH_SHORT, true).show();
+
+//            Toast.makeText(AddStudent.this, "Please Fill Fields", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -123,9 +133,11 @@ public class AddStudent extends AppCompatActivity {
 
             studentName.setText("");
             mcneeseId.setText("");
-            Toast.makeText(AddStudent.this, "Student Deleted", Toast.LENGTH_SHORT).show();
+            Toasty.success(this, "Student Deleted!", Toast.LENGTH_SHORT, true).show();
+
+//            Toast.makeText(AddStudent.this, "Student Deleted", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(AddStudent.this, "Please Fill Fields", Toast.LENGTH_SHORT).show();
+            Toasty.error(this, "Please Fill Fields", Toast.LENGTH_SHORT, true).show();
         }
     }
 
@@ -137,7 +149,7 @@ public class AddStudent extends AppCompatActivity {
         firebaseAuth.signOut();
         finish();
         startActivity(new Intent(AddStudent.this, SecondActivity.class));
-        Toast.makeText(AddStudent.this, "LOGOUT SUCCESSFUL", Toast.LENGTH_SHORT).show();
+        Toasty.success(this, "Logout Successful", Toast.LENGTH_SHORT, true).show();
 
     }
 
@@ -156,7 +168,9 @@ public class AddStudent extends AppCompatActivity {
                 firebaseAuth.signOut();
                 finish();
                 startActivity(new Intent(AddStudent.this,SecondActivity.class));
-                Toast.makeText(AddStudent.this,"Logout Successful", Toast.LENGTH_SHORT).show();
+                Toasty.success(this, "Logout Successful", Toast.LENGTH_SHORT, true).show();
+
+//                Toast.makeText(AddStudent.this,"Logout Successful", Toast.LENGTH_SHORT).show();
                 return true;
 //            case R.id.item3:
 //                Toast.makeText(this, "Item 3 selected", Toast.LENGTH_SHORT).show();
@@ -166,6 +180,7 @@ public class AddStudent extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
 
 
 

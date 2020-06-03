@@ -25,6 +25,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Calendar;
 
+import es.dmoral.toasty.Toasty;
+
 public class TakeAttendence extends AppCompatActivity {
     private EditText takeAttendence,take;
     private Button attendenceBtn;
@@ -131,10 +133,12 @@ public class TakeAttendence extends AppCompatActivity {
                             //..................................................................
                             counter = counter + 1;
                             tvCounter.setText(String.valueOf(counter));
-                            Toast.makeText(TakeAttendence.this,"Attendance Accepted",Toast.LENGTH_SHORT).show();
+                            Toasty.success(TakeAttendence.this, "Attendance Accepted", Toast.LENGTH_SHORT, true).show();
+
+//                            Toast.makeText(TakeAttendence.this,"Attendance Accepted",Toast.LENGTH_SHORT).show();
                         }else
                         {
-                            Toast.makeText(TakeAttendence.this,"Invalid",Toast.LENGTH_SHORT).show();
+                            Toasty.error(TakeAttendence.this, "Invalid", Toast.LENGTH_SHORT, true).show();
                         }
 
                     }
@@ -160,7 +164,7 @@ public class TakeAttendence extends AppCompatActivity {
         firebaseAuth.signOut();
         finish();
         startActivity(new Intent(TakeAttendence.this,SecondActivity.class));
-        Toast.makeText(TakeAttendence.this,"Logout Successful", Toast.LENGTH_SHORT).show();
+        Toasty.success(TakeAttendence.this, "Login Successful", Toast.LENGTH_SHORT, true).show();
 
     }
 
@@ -180,7 +184,7 @@ public class TakeAttendence extends AppCompatActivity {
                 firebaseAuth.signOut();
                 finish();
                 startActivity(new Intent(TakeAttendence.this,SecondActivity.class));
-                Toast.makeText(TakeAttendence.this,"Logout Successful", Toast.LENGTH_SHORT).show();
+                Toasty.success(TakeAttendence.this, "Login Successful", Toast.LENGTH_SHORT, true).show();
                 return true;
 //            case R.id.item3:
 //                Toast.makeText(this, "Item 3 selected", Toast.LENGTH_SHORT).show();
