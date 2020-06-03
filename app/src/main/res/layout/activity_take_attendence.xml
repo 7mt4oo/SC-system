@@ -17,6 +17,7 @@
         android:layout_marginBottom="15dp"
         android:fontFamily="serif"
         android:text="Date"
+        android:textColor="@color/colorPrimaryDark"
         android:textAllCaps="true"
         android:textSize="35dp"
         android:textStyle="bold"
@@ -30,6 +31,7 @@
         android:id="@+id/classnamepassedtakeattendence"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryDark"
 
         android:layout_centerHorizontal="true"
         android:layout_marginStart="125dp"
@@ -55,7 +57,7 @@
 
         android:layout_centerHorizontal="true"
         android:layout_marginStart="125dp"
-
+        android:textColor="#1818DD"
         android:layout_marginEnd="123dp"
         android:layout_marginBottom="16dp"
         android:fontFamily="serif"
@@ -84,12 +86,14 @@
 
     <EditText
         android:id="@+id/takeattendence"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="211dp"
+        android:layout_height="52dp"
         android:layout_marginTop="45dp"
         android:layout_marginBottom="320dp"
+        android:background="@drawable/coursename"
         android:ems="10"
-        android:hint=" Student Id"
+        android:textColorHint="#2327E7"
+        android:hint=" Student ID"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -104,6 +108,7 @@
         android:layout_marginBottom="252dp"
         android:background="@drawable/circlew"
         android:text="Check In"
+        android:textColor="#1818DD"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -133,6 +138,7 @@
         android:layout_marginBottom="256dp"
         android:background="@drawable/circlew"
         android:text="QR Scan"
+        android:textColor="#1818DD"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

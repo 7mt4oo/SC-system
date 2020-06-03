@@ -114,7 +114,6 @@
         android:onClick="deleteStudentDatabase"
         android:text="Delete"
         android:textAllCaps="false"
-
         android:textColor="#1818DD"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
